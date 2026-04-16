@@ -1,0 +1,1258 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Proposta Comercial — SEO | Athos Psicologia</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet" />
+  <style>
+    /* =============================================
+       TOKENS
+    ============================================= */
+    :root {
+      --c-bg:        #F7F4EF;
+      --c-surface:   #FFFFFF;
+      --c-ink:       #1A1714;
+      --c-ink-2:     #4A4540;
+      --c-ink-3:     #8C857D;
+      --c-accent:    #B8977A;
+      --c-accent-dk: #8C6E56;
+      --c-line:      #E4DDD6;
+      --c-tag-bg:    #EDE8E2;
+
+      --font: 'Inter', sans-serif;
+
+      --r-sm: 4px;
+      --r-md: 10px;
+      --r-lg: 20px;
+
+      --max-w: 780px;
+    }
+
+    /* =============================================
+       RESET
+    ============================================= */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font);
+      background: var(--c-bg);
+      color: var(--c-ink);
+      font-size: 15px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* =============================================
+       ANIMATIONS
+    ============================================= */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .anim { animation: fadeUp .6s ease both; }
+    .anim--d1 { animation-delay: .1s; }
+    .anim--d2 { animation-delay: .2s; }
+    .anim--d3 { animation-delay: .3s; }
+    .anim--d4 { animation-delay: .4s; }
+    .anim--d5 { animation-delay: .5s; }
+    .anim--d6 { animation-delay: .6s; }
+
+    /* =============================================
+       LAYOUT
+    ============================================= */
+    .wrap {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    /* =============================================
+       COVER
+    ============================================= */
+    .cover {
+      background: var(--c-ink);
+      color: #F7F4EF;
+      padding: 80px 0 72px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cover::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 60% 80% at 110% 50%, rgba(184,151,122,.18) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 60% at -10% 80%, rgba(184,151,122,.10) 0%, transparent 60%);
+    }
+
+    .cover__inner { position: relative; }
+
+    .cover__eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 48px;
+    }
+
+    .cover__brand {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--c-accent);
+    }
+
+    .cover__sep {
+      width: 32px;
+      height: 1px;
+      background: rgba(184,151,122,.4);
+    }
+
+    .cover__doc {
+      font-size: 12px;
+      font-weight: 400;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: rgba(247,244,239,.4);
+    }
+
+    .cover__title {
+      font-size: clamp(32px, 5vw, 52px);
+      font-weight: 800;
+      line-height: 1.08;
+      letter-spacing: -.02em;
+      margin-bottom: 20px;
+    }
+
+    .cover__title em {
+      font-style: normal;
+      color: var(--c-accent);
+    }
+
+    .cover__sub {
+      font-size: 16px;
+      font-weight: 300;
+      color: rgba(247,244,239,.6);
+      max-width: 480px;
+      line-height: 1.6;
+      margin-bottom: 56px;
+    }
+
+    .cover__meta {
+      display: flex;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .cover__meta-item {}
+
+    .cover__meta-label {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: rgba(247,244,239,.35);
+      margin-bottom: 4px;
+    }
+
+    .cover__meta-value {
+      font-size: 14px;
+      font-weight: 500;
+      color: rgba(247,244,239,.85);
+    }
+
+    /* =============================================
+       SECTION BASE
+    ============================================= */
+    .section {
+      padding: 72px 0;
+      border-bottom: 1px solid var(--c-line);
+    }
+
+    .section:last-of-type { border-bottom: none; }
+
+    .section__label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--c-accent);
+      margin-bottom: 12px;
+    }
+
+    .section__title {
+      font-size: 26px;
+      font-weight: 700;
+      letter-spacing: -.02em;
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+
+    .section__lead {
+      font-size: 15px;
+      color: var(--c-ink-2);
+      max-width: 560px;
+      line-height: 1.75;
+      margin-bottom: 40px;
+    }
+
+    /* =============================================
+       DIAGNÓSTICO
+    ============================================= */
+    .diag-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .diag-card {
+      background: var(--c-surface);
+      border: 1px solid var(--c-line);
+      border-radius: var(--r-md);
+      padding: 22px 24px;
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      transition: box-shadow .2s, border-color .2s;
+    }
+
+    .diag-card:hover {
+      border-color: var(--c-accent);
+      box-shadow: 0 4px 20px rgba(184,151,122,.1);
+    }
+
+    .diag-card__dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--c-accent);
+      flex-shrink: 0;
+      margin-top: 7px;
+    }
+
+    .diag-card__title {
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .diag-card__desc {
+      font-size: 13px;
+      color: var(--c-ink-3);
+      line-height: 1.6;
+    }
+
+    /* =============================================
+       JOURNEY — 5 MESES
+    ============================================= */
+    .journey {
+      position: relative;
+      padding-left: 28px;
+    }
+
+    .journey::before {
+      content: '';
+      position: absolute;
+      left: 7px;
+      top: 10px;
+      bottom: 10px;
+      width: 1px;
+      background: linear-gradient(to bottom, var(--c-accent), transparent);
+    }
+
+    .journey__step {
+      position: relative;
+      margin-bottom: 36px;
+      padding-left: 20px;
+    }
+
+    .journey__step:last-child { margin-bottom: 0; }
+
+    .journey__step::before {
+      content: '';
+      position: absolute;
+      left: -21px;
+      top: 6px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--c-bg);
+      border: 2px solid var(--c-accent);
+    }
+
+    .journey__step--active::before {
+      background: var(--c-accent);
+    }
+
+    .journey__month {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--c-accent);
+      margin-bottom: 4px;
+    }
+
+    .journey__title {
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 6px;
+      letter-spacing: -.01em;
+    }
+
+    .journey__desc {
+      font-size: 14px;
+      color: var(--c-ink-2);
+      line-height: 1.65;
+    }
+
+    .journey__tag {
+      display: inline-block;
+      margin-top: 8px;
+      font-size: 11px;
+      font-weight: 600;
+      padding: 3px 10px;
+      border-radius: 99px;
+      background: var(--c-tag-bg);
+      color: var(--c-accent-dk);
+      letter-spacing: .04em;
+    }
+
+    .journey__tag--free {
+      background: #EAF5EA;
+      color: #3A7A3A;
+    }
+
+    /* =============================================
+       PLANOS
+    ============================================= */
+    .plans {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      align-items: start;
+    }
+
+    .plan {
+      background: var(--c-surface);
+      border: 1px solid var(--c-line);
+      border-radius: var(--r-lg);
+      padding: 32px 28px;
+      position: relative;
+      transition: transform .25s, box-shadow .25s;
+    }
+
+    .plan:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(26,23,20,.08);
+    }
+
+    .plan--featured {
+      background: var(--c-ink);
+      border-color: var(--c-ink);
+      color: #F7F4EF;
+    }
+
+    .plan--featured .plan__desc  { color: rgba(247,244,239,.55); }
+    .plan--featured .plan__item  { color: rgba(247,244,239,.75); border-color: rgba(247,244,239,.1); }
+    .plan--featured .plan__check { color: var(--c-accent); }
+    .plan--featured .plan__price-label { color: rgba(247,244,239,.45); }
+
+    .plan__badge {
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--c-accent);
+      color: #fff;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      padding: 4px 14px;
+      border-radius: 99px;
+      white-space: nowrap;
+    }
+
+    .plan__name {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--c-accent);
+      margin-bottom: 10px;
+    }
+
+    .plan__price {
+      font-size: 38px;
+      font-weight: 800;
+      letter-spacing: -.03em;
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+
+    .plan__price-label {
+      font-size: 12px;
+      color: var(--c-ink-3);
+      margin-bottom: 20px;
+    }
+
+    .plan__desc {
+      font-size: 13px;
+      color: var(--c-ink-2);
+      line-height: 1.65;
+      margin-bottom: 24px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--c-line);
+    }
+
+    .plan--featured .plan__desc-sep { border-color: rgba(247,244,239,.1); }
+
+    .plan__list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+
+    .plan__item {
+      display: flex;
+      gap: 10px;
+      font-size: 13px;
+      color: var(--c-ink-2);
+      align-items: flex-start;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--c-line);
+    }
+
+    .plan__item:last-child { border-bottom: none; padding-bottom: 0; }
+
+    .plan__check { color: var(--c-accent); font-size: 14px; flex-shrink: 0; margin-top: 1px; }
+
+    /* =============================================
+       INVESTIMENTO INICIAL
+    ============================================= */
+    .invest {
+      background: var(--c-surface);
+      border: 1px solid var(--c-line);
+      border-radius: var(--r-lg);
+      padding: 48px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .invest__label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--c-accent);
+      margin-bottom: 10px;
+    }
+
+    .invest__title {
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: -.02em;
+      margin-bottom: 12px;
+    }
+
+    .invest__desc {
+      font-size: 14px;
+      color: var(--c-ink-2);
+      line-height: 1.7;
+      max-width: 400px;
+    }
+
+    .invest__price-wrap {
+      text-align: right;
+      flex-shrink: 0;
+    }
+
+    .invest__price {
+      font-size: 52px;
+      font-weight: 800;
+      letter-spacing: -.03em;
+      line-height: 1;
+      color: var(--c-ink);
+    }
+
+    .invest__price-note {
+      font-size: 12px;
+      color: var(--c-ink-3);
+      margin-top: 6px;
+    }
+
+    /* =============================================
+       INCLUSOS
+    ============================================= */
+    .includes {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-top: 32px;
+    }
+
+    .include-item {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      padding: 16px 20px;
+      background: var(--c-bg);
+      border-radius: var(--r-md);
+      border: 1px solid var(--c-line);
+    }
+
+    .include-item__icon {
+      font-size: 18px;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .include-item__title {
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 2px;
+    }
+
+    .include-item__desc {
+      font-size: 12px;
+      color: var(--c-ink-3);
+      line-height: 1.55;
+    }
+
+    /* =============================================
+       TIMELINE SUMMARY
+    ============================================= */
+    .timeline-bar {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 4px;
+      margin-top: 40px;
+    }
+
+    .tl-cell {
+      border-radius: var(--r-sm);
+      padding: 14px 10px;
+      text-align: center;
+    }
+
+    .tl-cell--active { background: var(--c-accent); }
+    .tl-cell--free   { background: var(--c-ink); }
+    .tl-cell--retainer { background: var(--c-tag-bg); border: 1px dashed var(--c-accent); }
+
+    .tl-cell__month {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+    }
+
+    .tl-cell--active   .tl-cell__month { color: #fff; }
+    .tl-cell--free     .tl-cell__month { color: rgba(247,244,239,.6); }
+    .tl-cell--retainer .tl-cell__month { color: var(--c-accent-dk); }
+
+    .tl-cell__tag {
+      font-size: 9px;
+      font-weight: 600;
+      margin-top: 4px;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+    }
+
+    .tl-cell--active   .tl-cell__tag { color: rgba(255,255,255,.8); }
+    .tl-cell--free     .tl-cell__tag { color: rgba(247,244,239,.4); }
+    .tl-cell--retainer .tl-cell__tag { color: var(--c-accent-dk); }
+
+    /* =============================================
+       SERVIÇOS ADICIONAIS
+    ============================================= */
+    .addon-block {
+      background: var(--c-surface);
+      border: 1px solid var(--c-line);
+      border-radius: var(--r-lg);
+      padding: 40px;
+      margin-bottom: 20px;
+      transition: box-shadow .25s;
+    }
+
+    .addon-block:hover {
+      box-shadow: 0 8px 32px rgba(26,23,20,.07);
+    }
+
+    .addon-block--ai {
+      background: var(--c-ink);
+      border-color: var(--c-ink);
+      color: #F7F4EF;
+    }
+
+    .addon-block--ai .addon-block__label { color: var(--c-accent); }
+    .addon-block--ai .addon-block__desc  { color: rgba(247,244,239,.6); }
+    .addon-block--ai .addon-feature      { background: rgba(255,255,255,.05); border-color: rgba(255,255,255,.08); }
+    .addon-block--ai .addon-feature__title { color: #F7F4EF; }
+    .addon-block--ai .addon-feature__desc  { color: rgba(247,244,239,.5); }
+    .addon-block--ai .addon-price-row    { border-color: rgba(255,255,255,.1); }
+    .addon-block--ai .addon-price-label  { color: rgba(247,244,239,.45); }
+    .addon-block--ai .addon-price-value  { color: var(--c-accent); }
+    .addon-block--ai .addon-price-note   { color: rgba(247,244,239,.35); }
+    .addon-block--ai .addon-price-divider { background: rgba(255,255,255,.1); }
+    .addon-block--ai .addon-block__footnote { color: rgba(247,244,239,.4); border-color: rgba(255,255,255,.08); }
+
+    .addon-block__header {
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+      margin-bottom: 28px;
+    }
+
+    .addon-block__icon {
+      font-size: 28px;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .addon-block__label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--c-accent);
+      margin-bottom: 6px;
+    }
+
+    .addon-block__title {
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: -.02em;
+      margin-bottom: 10px;
+    }
+
+    .addon-block__desc {
+      font-size: 14px;
+      color: var(--c-ink-2);
+      line-height: 1.7;
+    }
+
+    .addon-features {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      margin-bottom: 28px;
+    }
+
+    .addon-feature {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      padding: 14px 16px;
+      background: var(--c-bg);
+      border: 1px solid var(--c-line);
+      border-radius: var(--r-md);
+    }
+
+    .addon-feature__icon { font-size: 16px; flex-shrink: 0; margin-top: 1px; }
+
+    .addon-feature__title {
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 3px;
+    }
+
+    .addon-feature__desc {
+      font-size: 12px;
+      color: var(--c-ink-3);
+      line-height: 1.55;
+    }
+
+    .addon-price-row {
+      display: flex;
+      gap: 32px;
+      align-items: center;
+      padding-top: 24px;
+      border-top: 1px solid var(--c-line);
+    }
+
+    .addon-price-divider {
+      width: 1px;
+      height: 40px;
+      background: var(--c-line);
+      flex-shrink: 0;
+    }
+
+    .addon-price-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--c-ink-3);
+      margin-bottom: 4px;
+    }
+
+    .addon-price-value {
+      font-size: 28px;
+      font-weight: 800;
+      letter-spacing: -.02em;
+      color: var(--c-ink);
+      line-height: 1;
+    }
+
+    .addon-price-note {
+      font-size: 11px;
+      color: var(--c-ink-3);
+      margin-top: 4px;
+    }
+
+    .addon-block__footnote {
+      font-size: 12px;
+      color: var(--c-ink-3);
+      margin-top: 20px;
+      padding-top: 16px;
+      border-top: 1px solid var(--c-line);
+      line-height: 1.6;
+    }
+
+    @media (max-width: 640px) {
+      .addon-features   { grid-template-columns: 1fr; }
+      .addon-price-row  { flex-direction: column; align-items: flex-start; gap: 16px; }
+      .addon-price-divider { display: none; }
+    }
+
+    /* =============================================
+       CTA
+    ============================================= */
+    .cta-section {
+      background: var(--c-ink);
+      padding: 80px 0;
+      text-align: center;
+    }
+
+    .cta-section__title {
+      font-size: 32px;
+      font-weight: 800;
+      letter-spacing: -.02em;
+      color: #F7F4EF;
+      margin-bottom: 16px;
+      line-height: 1.15;
+    }
+
+    .cta-section__title em {
+      font-style: normal;
+      color: var(--c-accent);
+    }
+
+    .cta-section__sub {
+      font-size: 15px;
+      font-weight: 300;
+      color: rgba(247,244,239,.5);
+      margin-bottom: 40px;
+      max-width: 440px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.65;
+    }
+
+    .cta-btn {
+      display: inline-block;
+      background: var(--c-accent);
+      color: #fff;
+      font-family: var(--font);
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: .04em;
+      padding: 16px 40px;
+      border-radius: 99px;
+      text-decoration: none;
+      transition: background .2s, transform .2s;
+    }
+
+    .cta-btn:hover {
+      background: var(--c-accent-dk);
+      transform: translateY(-2px);
+      text-decoration: none;
+      color: #fff;
+    }
+
+    /* =============================================
+       FOOTER
+    ============================================= */
+    .footer {
+      padding: 32px 0;
+      border-top: 1px solid var(--c-line);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .footer__brand {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--c-ink-3);
+    }
+
+    .footer__copy {
+      font-size: 12px;
+      color: var(--c-ink-3);
+    }
+
+    /* =============================================
+       RESPONSIVE
+    ============================================= */
+    @media (max-width: 640px) {
+      .diag-grid  { grid-template-columns: 1fr; }
+      .plans      { grid-template-columns: 1fr; }
+      .invest     { grid-template-columns: 1fr; text-align: left; }
+      .invest__price-wrap { text-align: left; }
+      .includes   { grid-template-columns: 1fr; }
+      .timeline-bar { grid-template-columns: repeat(3, 1fr); }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ================================================
+     COVER
+================================================ -->
+<section class="cover">
+  <div class="wrap">
+    <div class="cover__inner">
+
+      <div class="cover__eyebrow anim">
+        <span class="cover__brand">Kairos Solutions</span>
+        <span class="cover__sep"></span>
+        <span class="cover__doc">Proposta Comercial</span>
+      </div>
+
+      <h1 class="cover__title anim anim--d1">
+        Posicionamento<br>
+        orgânico para a<br>
+        <em>Athos Psicologia</em>
+      </h1>
+
+      <p class="cover__sub anim anim--d2">
+        Uma estratégia de SEO construída para trazer pacientes novos
+        consistentemente — sem depender de anúncios pagos.
+      </p>
+
+      <div class="cover__meta anim anim--d3">
+        <div class="cover__meta-item">
+          <p class="cover__meta-label">Cliente</p>
+          <p class="cover__meta-value">Athos Psicologia</p>
+        </div>
+        <div class="cover__meta-item">
+          <p class="cover__meta-label">Serviço</p>
+          <p class="cover__meta-value">SEO Estratégico</p>
+        </div>
+        <div class="cover__meta-item">
+          <p class="cover__meta-label">Data</p>
+          <p class="cover__meta-value">Abril 2026</p>
+        </div>
+        <div class="cover__meta-item">
+          <p class="cover__meta-label">Elaborado por</p>
+          <p class="cover__meta-value">Kairos Solutions</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================================================
+     DIAGNÓSTICO
+================================================ -->
+<section class="section">
+  <div class="wrap">
+
+    <p class="section__label">Diagnóstico</p>
+    <h2 class="section__title">O que identificamos no site hoje</h2>
+    <p class="section__lead">
+      Após análise completa do site da Athos Psicologia, mapeamos os pontos que estão
+      impedindo a clínica de aparecer nos primeiros resultados do Google para quem
+      busca atendimento psicológico em São Paulo.
+    </p>
+
+    <div class="diag-grid">
+      <div class="diag-card">
+        <div class="diag-card__dot"></div>
+        <div>
+          <p class="diag-card__title">Invisível para buscas locais</p>
+          <p class="diag-card__desc">O site não menciona Perdizes ou São Paulo nos lugares certos — por isso o Google não associa a clínica a essas buscas.</p>
+        </div>
+      </div>
+      <div class="diag-card">
+        <div class="diag-card__dot"></div>
+        <div>
+          <p class="diag-card__title">Google não entende os serviços</p>
+          <p class="diag-card__desc">Sem a estrutura de dados correta, o Google trata o site como uma página genérica — não como uma clínica de psicologia.</p>
+        </div>
+      </div>
+      <div class="diag-card">
+        <div class="diag-card__dot"></div>
+        <div>
+          <p class="diag-card__title">Carregamento prejudicado</p>
+          <p class="diag-card__desc">Imagens pesadas e elementos duplicados aumentam o tempo de carregamento — um fator direto de ranqueamento do Google.</p>
+        </div>
+      </div>
+      <div class="diag-card">
+        <div class="diag-card__dot"></div>
+        <div>
+          <p class="diag-card__title">Páginas internas sem direcionamento</p>
+          <p class="diag-card__desc">Links quebrados e URLs inconsistentes confundem o Google e dispersam a autoridade que o site poderia acumular.</p>
+        </div>
+      </div>
+      <div class="diag-card">
+        <div class="diag-card__dot"></div>
+        <div>
+          <p class="diag-card__title">Sem destaque nos resultados</p>
+          <p class="diag-card__desc">Concorrentes com dados estruturados exibem endereço, telefone e avaliações direto no Google. A Athos ainda não aparece assim.</p>
+        </div>
+      </div>
+      <div class="diag-card">
+        <div class="diag-card__dot"></div>
+        <div>
+          <p class="diag-card__title">Ausência de conteúdo estratégico</p>
+          <p class="diag-card__desc">Sem blog ou conteúdo informativo, o site não aparece para quem pesquisa sobre saúde mental antes de marcar uma consulta.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ================================================
+     INVESTIMENTO INICIAL
+================================================ -->
+<section class="section">
+  <div class="wrap">
+
+    <p class="section__label">Etapa 1 — Implantação</p>
+    <h2 class="section__title">Estruturação de Base SEO</h2>
+    <p class="section__lead">
+      Antes de crescer organicamente, o site precisa estar preparado para o Google.
+      Esta etapa é feita uma única vez e é o alicerce de todo o trabalho que vem depois.
+    </p>
+
+    <div class="invest">
+      <div class="invest__left">
+        <p class="invest__label">Investimento único</p>
+        <h3 class="invest__title">Implantação SEO Completa</h3>
+        <p class="invest__desc">
+          Cobrimos todos os pontos críticos identificados no diagnóstico: preparação técnica
+          do site, otimização de todas as páginas, sinalizações para o Google Maps e
+          estruturação para que a clínica apareça com destaque nos resultados de busca.
+        </p>
+      </div>
+      <div class="invest__price-wrap">
+        <p class="invest__price">R$&nbsp;1.400</p>
+        <p class="invest__price-note">pagamento único na assinatura</p>
+      </div>
+    </div>
+
+    <div class="includes">
+      <div class="include-item">
+        <span class="include-item__icon"></span>
+        <div>
+          <p class="include-item__title">Otimização de todas as páginas</p>
+          <p class="include-item__desc">Títulos, descrições e textos ajustados para as buscas mais relevantes da clínica.</p>
+        </div>
+      </div>
+      <div class="include-item">
+        <span class="include-item__icon"></span>
+        <div>
+          <p class="include-item__title">Configuração de SEO Local</p>
+          <p class="include-item__desc">A clínica passa a ser reconhecida pelo Google como negócio local em Perdizes, SP.</p>
+        </div>
+      </div>
+      <div class="include-item">
+        <span class="include-item__icon"></span>
+        <div>
+          <p class="include-item__title">Performance e carregamento</p>
+          <p class="include-item__desc">Correções técnicas que melhoram a velocidade e a leitura do site pelo Google.</p>
+        </div>
+      </div>
+      <div class="include-item">
+        <span class="include-item__icon"></span>
+        <div>
+          <p class="include-item__title">Rich Results (destaque no Google)</p>
+          <p class="include-item__desc">Configuração para que a clínica exiba endereço, telefone e avaliações direto nos resultados.</p>
+        </div>
+      </div>
+      <div class="include-item">
+        <span class="include-item__icon"></span>
+        <div>
+          <p class="include-item__title">Unificação dos sites</p>
+          <p class="include-item__desc">Reutilização do que já funciona e centralização em um único site — sem perder histórico nem autoridade conquistada.</p>
+        </div>
+      </div>
+      <div class="include-item">
+        <span class="include-item__icon"></span>
+        <div>
+          <p class="include-item__title">Direcionamento por especialidade</p>
+          <p class="include-item__desc">O paciente é guiado até a profissional certa com base nas suas necessidades — menos atrito, mais agendamentos.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ================================================
+     JORNADA — 5 MESES
+================================================ -->
+<section class="section">
+  <div class="wrap">
+
+    <p class="section__label">Etapa 2 — Acompanhamento</p>
+    <h2 class="section__title">5 meses de relatório mensal incluso</h2>
+    <p class="section__lead">
+      Após a implantação, acompanhamos a evolução do posicionamento mês a mês com
+      relatórios claros e objetivos. Nos primeiros 5 meses, esse acompanhamento
+      está incluído no investimento da implantação — sem custo adicional.
+    </p>
+
+    <div class="journey">
+
+      <div class="journey__step journey__step--active">
+        <p class="journey__month">Mês 0 — Implantação</p>
+        <p class="journey__title">Estruturação completa do site</p>
+        <p class="journey__desc">Todas as correções técnicas e otimizações são aplicadas. O Google começa a rastrear o site na nova configuração.</p>
+        <span class="journey__tag">R$ 1.400 — investimento único</span>
+      </div>
+
+      <div class="journey__step">
+        <p class="journey__month">Mês 1</p>
+        <p class="journey__title">Primeiro relatório de posicionamento</p>
+        <p class="journey__desc">Apresentamos as primeiras palavras-chave ranqueadas, visibilidade no Google Maps e páginas com mais acessos.</p>
+        <span class="journey__tag journey__tag--free">Incluso</span>
+      </div>
+
+      <div class="journey__step">
+        <p class="journey__month">Mês 2</p>
+        <p class="journey__title">Análise de evolução e ajustes</p>
+        <p class="journey__desc">Comparativo com o mês anterior, identificação de oportunidades e ajustes para acelerar o posicionamento.</p>
+        <span class="journey__tag journey__tag--free">Incluso</span>
+      </div>
+
+      <div class="journey__step">
+        <p class="journey__month">Mês 3</p>
+        <p class="journey__title">Resultados orgânicos começam a consolidar</p>
+        <p class="journey__desc">SEO começa a mostrar resultados expressivos a partir do terceiro mês. Relatório com dados de crescimento.</p>
+        <span class="journey__tag journey__tag--free">Incluso</span>
+      </div>
+
+      <div class="journey__step">
+        <p class="journey__month">Mês 4</p>
+        <p class="journey__title">Mapeamento de novas oportunidades</p>
+        <p class="journey__desc">Identificamos novos termos de busca e páginas a otimizar com base no comportamento real dos usuários.</p>
+        <span class="journey__tag journey__tag--free">Incluso</span>
+      </div>
+
+      <div class="journey__step">
+        <p class="journey__month">Mês 5</p>
+        <p class="journey__title">Relatório final + apresentação de continuidade</p>
+        <p class="journey__desc">Relatório completo do período, resultados consolidados e apresentação das opções de contrato mensal para continuar crescendo.</p>
+        <span class="journey__tag journey__tag--free">Incluso</span>
+      </div>
+
+    </div>
+
+    <!-- TIMELINE BAR -->
+    <div class="timeline-bar">
+      <div class="tl-cell tl-cell--active">
+        <p class="tl-cell__month">Mês 0</p>
+        <p class="tl-cell__tag">Implantação</p>
+      </div>
+      <div class="tl-cell tl-cell--free">
+        <p class="tl-cell__month">Mês 1</p>
+        <p class="tl-cell__tag">Relatório</p>
+      </div>
+      <div class="tl-cell tl-cell--free">
+        <p class="tl-cell__month">Mês 2</p>
+        <p class="tl-cell__tag">Relatório</p>
+      </div>
+      <div class="tl-cell tl-cell--free">
+        <p class="tl-cell__month">Mês 3</p>
+        <p class="tl-cell__tag">Relatório</p>
+      </div>
+      <div class="tl-cell tl-cell--free">
+        <p class="tl-cell__month">Mês 4</p>
+        <p class="tl-cell__tag">Relatório</p>
+      </div>
+      <div class="tl-cell tl-cell--free">
+        <p class="tl-cell__month">Mês 5</p>
+        <p class="tl-cell__tag">Relatório</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ================================================
+     SERVIÇOS ADICIONAIS
+================================================ -->
+<section class="section">
+  <div class="wrap">
+
+    <p class="section__label">Serviços Adicionais</p>
+    <h2 class="section__title">Mais possibilidades para a clínica crescer</h2>
+    <p class="section__lead">
+      Além do SEO, a Kairos Solutions oferece soluções que trabalham juntas para automatizar
+      processos, modernizar a presença digital e preparar a clínica para o futuro.
+      Cada item pode ser contratado separadamente ou em conjunto.
+    </p>
+
+    <!-- AUTOMAÇÃO DE WHATSAPP -->
+    <div class="addon-block">
+      <div class="addon-block__header">
+        <span class="addon-block__icon"></span>
+        <div>
+          <p class="addon-block__label">Automação</p>
+          <h3 class="addon-block__title">WhatsApp Automatizado</h3>
+          <p class="addon-block__desc">
+            Transforme o WhatsApp da clínica em um canal de atendimento que funciona mesmo fora do horário comercial.
+            Pacientes recebem respostas imediatas, são qualificados e direcionados à profissional certa —
+            tudo automaticamente, sem intervenção humana.
+          </p>
+        </div>
+      </div>
+      <div class="addon-features">
+        <div class="addon-feature">
+          <span class="addon-feature__icon"></span>
+          <div>
+            <p class="addon-feature__title">Atendimento 24h</p>
+            <p class="addon-feature__desc">Resposta imediata a qualquer hora — nenhum paciente fica sem retorno.</p>
+          </div>
+        </div>
+        <div class="addon-feature">
+          <span class="addon-feature__icon"></span>
+          <div>
+            <p class="addon-feature__title">Triagem por especialidade</p>
+            <p class="addon-feature__desc">O sistema identifica a demanda e encaminha para a psicóloga adequada.</p>
+          </div>
+        </div>
+        <div class="addon-feature">
+          <span class="addon-feature__icon"></span>
+          <div>
+            <p class="addon-feature__title">Confirmação e lembrete de consulta</p>
+            <p class="addon-feature__desc">Redução de faltas com lembretes automáticos 24h antes da sessão.</p>
+          </div>
+        </div>
+        <div class="addon-feature">
+          <span class="addon-feature__icon"></span>
+          <div>
+            <p class="addon-feature__title">Reativação de pacientes inativos</p>
+            <p class="addon-feature__desc">Fluxo automático para contatar pacientes que não retornam há mais de 30 dias.</p>
+          </div>
+        </div>
+      </div>
+      <div class="addon-price-row">
+        <div class="addon-price-item">
+          <p class="addon-price-label">Configuração inicial</p>
+          <p class="addon-price-value">R$ 1.800</p>
+          <p class="addon-price-note">pagamento único</p>
+        </div>
+        <div class="addon-price-divider"></div>
+        <div class="addon-price-item">
+          <p class="addon-price-label">Manutenção mensal</p>
+          <p class="addon-price-value">R$ 350</p>
+          <p class="addon-price-note">por mês</p>
+        </div>
+      </div>
+    </div>
+
+    
+
+    <!-- IA -->
+    <div class="addon-block addon-block--ai">
+      <div class="addon-block__header">
+        <span class="addon-block__icon"></span>
+        <div>
+          <p class="addon-block__label">Inteligência Artificial</p>
+          <h3 class="addon-block__title">Módulo de IA — Add-on Futuro</h3>
+          <p class="addon-block__desc">
+            Para clínicas que quiserem dar um passo além: integração de Inteligência Artificial
+            nas automações e no atendimento. A IA aprende com as interações da clínica e evolui
+            com o tempo — capaz de responder perguntas complexas, recomendar profissionais e
+            identificar padrões de demanda. Disponível como add-on a qualquer momento.
+          </p>
+        </div>
+      </div>
+      <div class="addon-features">
+        <div class="addon-feature">
+          <span class="addon-feature__icon"></span>
+          <div>
+            <p class="addon-feature__title">Atendente virtual inteligente</p>
+            <p class="addon-feature__desc">Responde dúvidas sobre os serviços da clínica com linguagem natural e humanizada.</p>
+          </div>
+        </div>
+        <div class="addon-feature">
+          <span class="addon-feature__icon"></span>
+          <div>
+            <p class="addon-feature__title">Relatórios com análise automática</p>
+            <p class="addon-feature__desc">A IA identifica padrões nos dados e sugere ações de melhoria sem trabalho manual.</p>
+          </div>
+        </div>
+        <div class="addon-feature">
+          <span class="addon-feature__icon"></span>
+          <div>
+            <p class="addon-feature__title">Recomendação personalizada de profissional</p>
+            <p class="addon-feature__desc">Com base nas respostas do paciente, a IA indica a psicóloga mais adequada para o caso.</p>
+          </div>
+        </div>
+        <div class="addon-feature">
+          <span class="addon-feature__icon"></span>
+          <div>
+            <p class="addon-feature__title">Integração com WhatsApp e site</p>
+            <p class="addon-feature__desc">Funciona de forma unificada em todos os canais digitais da clínica.</p>
+          </div>
+        </div>
+      </div>
+      <div class="addon-price-row">
+        <div class="addon-price-item">
+          <p class="addon-price-label">Implementação + treinamento</p>
+          <p class="addon-price-value">R$ 2.500</p>
+          <p class="addon-price-note">add-on sobre o plano ativo</p>
+        </div>
+        <div class="addon-price-divider"></div>
+  
+      </div>
+      <p class="addon-block__footnote">
+        ✦ O módulo de IA pode ser ativado a qualquer momento após a contratação de qualquer plano mensal, sem necessidade de refazer configurações anteriores.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ================================================
+     CTA
+================================================ -->
+<section class="cta-section">
+  <div class="wrap">
+    <h2 class="cta-section__title">
+      Pronta para aparecer<br>
+      no <em>Google</em>?
+    </h2>
+  </div>
+</section>
+
+<!-- ================================================
+     FOOTER
+================================================ -->
+<footer>
+  <div class="wrap">
+    <div class="footer">
+      <span class="footer__brand">Kairos Solutions</span>
+      <span class="footer__copy">© 2026 · Todos os direitos reservados · Proposta válida por 15 dias</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
